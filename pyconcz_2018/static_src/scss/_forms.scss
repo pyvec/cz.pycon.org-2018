@@ -89,7 +89,10 @@
   }
 
   input[type=checkbox] {
-    height: 16px;
+    height: $vr-font-size;
+    width: $vr-font-size;
+    margin-top: 5px;
+    margin-left: 5px;
   }
 
   textarea {
