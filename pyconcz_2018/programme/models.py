@@ -6,6 +6,7 @@ from django.db import models
 
 class Speaker(models.Model):
     full_name = models.CharField(max_length=200)
+    short_bio = models.TextField('Short bio', blank=True, help_text='For keynote speakers')
     bio = models.TextField()
 
     twitter = models.CharField(max_length=255, blank=True)
