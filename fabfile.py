@@ -38,7 +38,8 @@ def pip(payload):
 @task
 def deploy():
     with cd(PROJECT_ROOT):
-        run('git pull origin %s' % env.branch)
+        run('git fetch origin')
+        run('git reset --hard origin/%s' % env.branch)
         pip('install -r requirements.txt')
         managepy('migrate')
         managepy('collectstatic --no-input --link')
